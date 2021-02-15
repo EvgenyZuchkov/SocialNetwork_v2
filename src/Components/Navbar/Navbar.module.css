@@ -1,6 +1,7 @@
 .nav {
     grid-area: n;
-    background-color: darkgrey;
+    grid-template-columns: 1fr 1fr;
+    background-color: rgba(0, 226, 255, 0.57);
     padding: 40px;
     opacity: 80%;
 }
@@ -9,8 +10,9 @@
     font-size: 18px;
     color: white;
     text-decoration: none;
+    opacity: 100%;
 }
 
 .item .activeLink {
-    color: gold;
+    color: #7081ff;
 }

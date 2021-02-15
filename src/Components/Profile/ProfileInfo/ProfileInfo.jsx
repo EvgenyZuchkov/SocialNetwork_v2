@@ -4,8 +4,7 @@ const ProfileInfo = (props) => {
     return (
         <div>
             <div>
-                <img
-                    src="https://helpx.adobe.com/content/dam/help/en/photoshop/using/convert-color-image-black-white/jcr_content/main-pars/before_and_after/image-before/Landscape-Color.jpg"/>
+                <img src="https://static.schools.by/images/header-bg/img-17.jpg"/>
             </div>
             <div className={s.descriptionBlock}>
                 ava + discription

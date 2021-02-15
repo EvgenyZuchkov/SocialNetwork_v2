@@ -1,7 +1,8 @@
-.content{
+.content {
 
 }
 
 .content img {
+    height: 300px;
     width: 1000px;
 }
