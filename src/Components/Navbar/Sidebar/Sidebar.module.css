@@ -1,0 +1,12 @@
+.avatar {
+    display: inline;
+
+}
+
+.avatar img{
+    width: 36px;
+    border-radius: 50px;
+    margin-top: 15px;
+    padding: 2px;
+
+}
