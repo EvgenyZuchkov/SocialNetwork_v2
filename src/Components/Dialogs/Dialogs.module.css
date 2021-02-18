@@ -1,6 +1,6 @@
 .dialogs {
     display: grid;
-    grid-template-columns: 0.5fr 1fr 1fr 1fr 2fr;
+    grid-template-columns: 0.5fr 1fr 2fr 1fr;
     grid-gap: 5px;
 }
 
@@ -37,5 +37,6 @@
 }
 
 .dialogs .textareaBlock {
+
     margin-top: 400px;
 }
