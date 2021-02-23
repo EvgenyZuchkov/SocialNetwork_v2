@@ -1,10 +1,10 @@
 .header {
     grid-area: h;
     grid-template-columns: 5fr 5fr  1fr 1fr;
-    background-color: rgba(0, 226, 255, 0.57);
+    background-color: #85e3e8;
     opacity: 90%;
 }
 
 .header img {
-    width: 50px;
+    width: 40px;
 }

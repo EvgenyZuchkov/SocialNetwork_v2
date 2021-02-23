@@ -15,5 +15,5 @@
 .app-wrapper-content {
     grid-area: c;
     opacity: 90%;
-    background-color: lavender;
+    /*background-color: lavender;*/
 }

@@ -1,7 +1,7 @@
 .nav {
     grid-area: n;
     grid-template-columns: 1fr 1fr;
-    background-color: rgba(0, 226, 255, 0.57);
+    /*background-color: rgba(0, 226, 255, 0.57);*/
     padding: 30px;
     opacity: 80%;
 }
