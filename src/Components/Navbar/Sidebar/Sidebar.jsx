@@ -6,7 +6,6 @@ const Sidebar = (props) => {
             <img src={props.avatar}/>
         </div>
     )
-
 }
 
 export default Sidebar;

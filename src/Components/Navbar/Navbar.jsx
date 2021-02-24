@@ -2,6 +2,7 @@ import s from './Navbar.module.css'
 import {NavLink} from "react-router-dom";
 import Sidebar from "./Sidebar/Sidebar";
 
+
 const Navbar = (props) => {
     let avatarElements = props.state.friends.map(a => <Sidebar avatar={a.avatar} id={a.id}/>)
     return (
