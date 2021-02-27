@@ -1,7 +1,7 @@
 .header {
     grid-area: h;
     /*grid-template-columns: 5fr 5fr  1fr 1fr;*/
-    background-color: #27a481;
+    /*background-color: #27a481;*/
     opacity: 90%;
     box-shadow: 0 0 10px black;
 }

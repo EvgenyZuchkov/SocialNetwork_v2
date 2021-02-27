@@ -4,7 +4,7 @@ import Sidebar from "./Sidebar/Sidebar";
 
 
 const Navbar = (props) => {
-    let avatarElements = props.state.friends.map(a => <Sidebar avatar={a.avatar} id={a.id}/>)
+    let avatarElements = props.state.sidebarPage.friends.map(a => <Sidebar avatar={a.avatar} key = {a.id} id={a.id}/>)
     return (
         <nav className={s.nav}>
             <div className={s.item}>
