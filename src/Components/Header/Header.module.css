@@ -3,9 +3,14 @@
     /*grid-template-columns: 5fr 5fr  1fr 1fr;*/
     /*background-color: #27a481;*/
     opacity: 90%;
-    box-shadow: 0 0 10px black;
+    box-shadow: 5px 0 10px black;
 }
-
+.header b{
+    font-family: "Bookman Old Style";
+    font-size: 40px;
+    margin-left: 20px;
+    text-shadow: 7px 0 10px #7081ff;
+}
 .header img {
     width: 40px;
 }

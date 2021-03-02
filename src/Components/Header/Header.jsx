@@ -1,9 +1,11 @@
 import s from './Header.module.css'
+import logo from '../../Assets/Images/logo.png'
 
 const Header = () => {
     return (
         <header className={s.header}>
-            <img src="https://bitcoinvault.global/img/logo_large.svg"/>
+            <img src={logo}/>
+            <b>Social Network v.2</b>
         </header>
     )
 }
