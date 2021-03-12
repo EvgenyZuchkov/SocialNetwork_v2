@@ -26,7 +26,7 @@ const Navbar = (props) => {
                 <NavLink to='/settings' activeClassName={s.activeLink}>Settings</NavLink>
             </div>
             <div className={s.friends}>
-                <NavLink to='/friends' activeClassName={s.activeLink}>Friends</NavLink>
+                <NavLink to='/users' activeClassName={s.activeLink}>Friends</NavLink>
                 <div className={s.avatarBlock}>
                     {avatarElements}
                 </div>

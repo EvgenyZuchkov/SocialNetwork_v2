@@ -1,10 +1,9 @@
 .nav {
     grid-area: n;
-    grid-template-columns: 1fr 1fr;
-    /*background-color: rgba(0, 226, 255, 0.57);*/
+    grid-template-columns: 1fr;
     padding: 30px;
     opacity: 80%;
-    box-shadow: 0 0 10px black;
+    /*box-shadow: 0 0 10px black;*/
 }
 
 .item a {
@@ -14,8 +13,10 @@
     opacity: 100%;
 }
 
-.item a :hover{
-    font-size: 30px;
+.item a:hover {
+    color: darkslateblue;
+    background: lavender;
+    border-radius: 5px;
 }
 
 .item .activeLink {

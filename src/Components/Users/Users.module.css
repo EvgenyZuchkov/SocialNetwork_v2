@@ -1,4 +1,12 @@
+.users {
+    margin-left: 20px;
+}
+
 .userPhoto {
     width: 100px;
     border-radius: 50px;
+}
+
+.selectedPage {
+    font-weight: bold;
 }

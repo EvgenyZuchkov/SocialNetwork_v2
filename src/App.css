@@ -1,10 +1,10 @@
 .app-wrapper {
     margin: 0 auto;
     display: grid;
-    width: 1200px;
+    width: 1300px;
 
     grid-template-areas:
-    "h h"
+    "h h "
     "n c";
 
     grid-template-rows: 50px 1fr;
@@ -15,6 +15,7 @@
 .app-wrapper-content {
     grid-area: c;
     opacity: 90%;
+
     /*box-shadow: 0 0 10px;*/
     /*background-color: lavender;*/
 }
