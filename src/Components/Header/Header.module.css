@@ -14,3 +14,11 @@
 .header img {
     width: 40px;
 }
+
+.loginBlock {
+    float: right;
+}
+
+.loginBlock a {
+    color: white;
+}
