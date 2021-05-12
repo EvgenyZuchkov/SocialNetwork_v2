@@ -5,7 +5,9 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background: url("http://oboi.cc/uploads/11_05_2013/view/201209/oboik.ru_34549.jpg");
+  /*background: url("http://oboi.cc/uploads/11_05_2013/view/201209/oboik.ru_34549.jpg");*/
+  background: url("https://img3.goodfon.ru/original/1920x1080/8/36/fon-svechenie-gradient.jpg");
+  /*background: #e8bf4e;*/
   background-size: 100%;
   background-attachment: fixed;
 
