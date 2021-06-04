@@ -1,7 +1,6 @@
 .header {
     grid-area: h;
-    /*grid-template-columns: 5fr 5fr  1fr 1fr;*/
-    /*background-color: #27a481;*/
+    background: black;
     opacity: 90%;
     box-shadow: 5px 0 10px black;
 }
@@ -13,10 +12,14 @@
 }
 .header img {
     width: 40px;
+    margin-left: 50px;
 }
 
 .loginBlock {
     float: right;
+    color: white;
+    margin-right: 10px;
+    margin-top: 10px;
 }
 
 .loginBlock a {

@@ -2,21 +2,26 @@
     grid-area: n;
     grid-template-columns: 1fr;
     padding: 30px;
-    opacity: 80%;
+    opacity: 90%;
+    width: 250px;
+    /*background: rgba(244,244,244,0.54);*/
+    background: rgba(122,122,122,0.54);
     /*box-shadow: 0 0 10px black;*/
 }
 
 .item a {
-    font-size: 20px;
+    font-size: 25px;
     color: white;
     text-decoration: none;
     opacity: 100%;
+    margin-left: 80px;
 }
 
 .item a:hover {
-    color: darkslateblue;
-    background: lavender;
-    border-radius: 5px;
+    color: #7081ff;
+    font-weight: bold;
+    /*background: lavender;*/
+    /*border-radius: 5px;*/
 }
 
 .item .activeLink {

@@ -2,11 +2,10 @@ import s from "./Users.module.css";
 import userPhoto from "../../Assets/Images/User-Icon.jpg";
 import {NavLink} from "react-router-dom";
 import {usersAPI} from "../../API/API";
-import {toggleFollowingProgress} from "../../Redux/Users-reducer";
 
 
 let Users = (props) => {
-    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize) / 10
+    let pagesCount = Math.ceil(props.totalUsersCount / props.pageSize) / 20
     let pages = []
 
     for (let i = 1; i <= pagesCount; i++) {
@@ -26,11 +25,11 @@ let Users = (props) => {
             {
                 props.users.map(u => <div key={u.id}>
                         <span>
-                        <div>
-                            <NavLink to={'/profile/' + u.id}>
-                                <img src={u.photos.small != null ? u.photos.small : userPhoto} className={s.userPhoto}/>
-                            </NavLink>
-                        </div>
+                            <div>
+                                <NavLink to={'/profile/' + u.id} >
+                                    <img src={u.photos.small != null ? u.photos.small : userPhoto} className={s.userPhoto}/>
+                                </NavLink>
+                            </div>
                         <div>
                             {u.followed
                                 ? <button disabled={props.followingInProgress.some(id => id === u.id)} onClick={() => {
