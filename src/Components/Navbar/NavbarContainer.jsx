@@ -1,5 +1,6 @@
 import Navbar from "./Navbar";
 import {connect} from "react-redux";
+import {compose} from "redux";
 
 
 let mapStateToProps = (state) => {
@@ -8,11 +9,10 @@ let mapStateToProps = (state) => {
     }
 }
 let mapDispatchToProps = (dispatch) => {
-    return {
-
-    }
+    return {}
 }
 
-const NavbarContainer = connect(mapStateToProps, mapDispatchToProps)(Navbar);
 
-export default NavbarContainer;
+export default compose(
+    connect(mapStateToProps, mapDispatchToProps)
+)(Navbar);
