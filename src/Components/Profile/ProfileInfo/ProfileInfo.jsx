@@ -1,5 +1,6 @@
 import s from './ProfileInfo.module.css'
 import Preloader from "../../Common/Preloader/Preloader";
+import ProfileStatus from "./ProfileStatus";
 
 const ProfileInfo = (props) => {
 
@@ -17,6 +18,7 @@ const ProfileInfo = (props) => {
                     <img src={props.profile.photos.large}/>
                 </div>
                 <div>
+                    <ProfileStatus status = {'Hey man'}/>
                     <strong>About me:</strong> {props.profile.aboutMe}<br/>
                     <strong>Contacts:</strong><br/>
                     <strong>Facebook:</strong> <a href="">{props.profile.contacts.facebook}</a><br/>

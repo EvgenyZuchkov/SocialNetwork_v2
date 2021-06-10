@@ -15,10 +15,16 @@ const Header = (props) => {
             <b>SN</b>
             <div className={s.loginBlock}>
                 <div className={s.infoUser}>
-                    <div>User: {props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink>}</div>
-                    <div>Email: {props.email}</div>
+                    <div>
+                        User: {props.isAuth ? props.login : <NavLink to={'/login'}>Login</NavLink>}
+                    </div>
+                    <div>
+                        Email: {props.email}
+                    </div>
                 </div>
-                <div><img src={props.profile.photos.small}/></div>
+                <div>
+                    {props.isAuth ? <img src={props.profile.photos.small}/> : null}
+                </div>
             </div>
         </header>
     )
