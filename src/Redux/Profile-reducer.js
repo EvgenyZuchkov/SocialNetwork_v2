@@ -13,7 +13,7 @@ let initialState = {
     ],
     newPostText: 'Hello',
     profile: null,
-    status: 'hey'
+    status: ''
 
 }
 
@@ -71,7 +71,9 @@ export const getStatus = (userId) => (dispatch) => {
 export const updateStatus = (status) => (dispatch) => {
     profileAPI.updateStatus(status)
         .then(response => {
-            dispatch(setStatus(status))
+            if (response.data.resulCode === 0) {
+                dispatch(setStatus(status))
+            }
         })
 }
 
