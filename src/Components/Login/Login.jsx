@@ -1,5 +1,5 @@
 import React from "react";
-import { Formik, Form, Field, ErrorMessage } from 'formik';
+import {Formik, Form, Field, ErrorMessage} from 'formik';
 
 const Login = () => {
     return (
@@ -14,28 +14,28 @@ const LoginForm = () => {
     return (
         <div>
             <Formik
-                initialValues={{ email: '', password: '' , remember: ''}}
+                initialValues={{email: '', password: '', remember: ''}}
                 validate={values => {
                     const errors = {};
                     return errors;
                 }}
-                onSubmit={(values, { setSubmitting }) => {
+                onSubmit={(values, {setSubmitting}) => {
                     setTimeout(() => {
                         alert(JSON.stringify(values, null, 2));
                         setSubmitting(false);
                     }, 400);
                 }}
             >
-                {({ isSubmitting }) => (
+                {({isSubmitting}) => (
                     <Form>
                         <div>
-                            <Field type="email" name="email" />
+                            <Field type="email" name="email"/>
                         </div>
                         <div>
-                            <Field type="password" name="password" />
+                            <Field type="password" name="password"/>
                         </div>
                         <div>
-                            <Field type="checkbox" name="remember" /> Remember me
+                            <Field type="checkbox" name="remember"/> Remember me
                         </div>
                         <div>
                             <button type="submit" disabled={isSubmitting}>
