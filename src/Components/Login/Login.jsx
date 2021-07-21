@@ -1,48 +1,99 @@
 import React from "react";
-import {Formik, Form, Field, ErrorMessage} from 'formik';
+import {Formik} from 'formik';
+import s from "./Login.module.css"
+import * as yup from 'yup'
 
 const Login = () => {
     return (
         <div>
-            <h1>Login</h1>
+            <h1 className={s.login}>Sign Up</h1>
             <LoginForm/>
         </div>
     )
 }
 
-const LoginForm = () => {
+const LoginForm = (props) => {
+
+    const validationSchema = yup.object().shape({
+        email: yup.string()
+            .email('Email is invalid')
+            .required('Required'),
+        password: yup.string()
+            .min(6, 'Password must be at least 6 characters')
+            .required('Required')
+    })
+
     return (
         <div>
             <Formik
-                initialValues={{email: '', password: '', remember: ''}}
-                validate={values => {
-                    const errors = {};
-                    return errors;
-                }}
+                initialValues={{
+                    email: '',
+                    password: '',
+                    remember: ''}}
+                validateOnBlur
                 onSubmit={(values, {setSubmitting}) => {
                     setTimeout(() => {
                         alert(JSON.stringify(values, null, 2));
                         setSubmitting(false);
                     }, 400);
                 }}
+                validationSchema={validationSchema}
             >
-                {({isSubmitting}) => (
-                    <Form>
+                {({values, errors, touched,
+                      handleChange, handleBlur,
+                      isValid, handleSubmit, dirty}) => (
+                    <form className={s.loginForm}>
+                        <p>
+                            <input type='text'
+                                   name='email'
+                                   placeholder='Enter your email'
+                                   onChange={handleChange}
+                                   onBlur={handleBlur}
+                                   value={values.email}
+                                   className={
+                                       errors.email && touched.email
+                                           ? `${s.textInputError}`
+                                           : `${s.textInput}`
+                                   }
+                            />
+                        </p>
+                        {touched.email && errors.email && <p className={s.error}> {errors.email} </p>}
+                        <p>
+                            <input type='password'
+                                   name='password'
+                                   placeholder='Enter your password'
+                                   onChange={handleChange}
+                                   onBlur={handleBlur}
+                                   value={values.password}
+                                   className={
+                                       errors.password && touched.password
+                                           ? `${s.textInputError}`
+                                           : `${s.textInput}`
+                                   }
+                            />
+                        </p>
+                        {touched.password && errors.password && <p className={s.error}> {errors.password} </p>}
                         <div>
-                            <Field type="email" name="email"/>
+                            <input type='checkbox'
+                                   name='remember'
+                                   onChange={handleChange}
+                                   onBlur={handleBlur}
+                                   value={values.remember}
+                                   className={s.checkbox}
+                            /> Remember me
                         </div>
+                        {touched.remember && errors.remember && <p className={s.error}> {errors.remember} </p>}
                         <div>
-                            <Field type="password" name="password"/>
-                        </div>
-                        <div>
-                            <Field type="checkbox" name="remember"/> Remember me
-                        </div>
-                        <div>
-                            <button type="submit" disabled={isSubmitting}>
+                            <button
+                                type="submit"
+                                disabled={!isValid || !dirty}
+                                onClick={handleSubmit}
+                                className={s.button}
+                            >
                                 Login
                             </button>
                         </div>
-                    </Form>
+                    </form>
                 )}
             </Formik>
         </div>
@@ -51,7 +102,3 @@ const LoginForm = () => {
 
 
 export default Login;
-
-
-
-// export default Login
