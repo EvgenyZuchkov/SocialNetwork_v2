@@ -22,7 +22,6 @@ const Dialogs = (props) => {
             </div>
             <div className={s.messages}>
                 {messagesElements}
-
             </div>
             <div className={s.textareaBlock}>
                 <AddMessageForm sendMessage={props.sendMessage}/>
