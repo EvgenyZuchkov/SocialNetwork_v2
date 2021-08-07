@@ -34,11 +34,13 @@ export const getAuthUserData = () => (dispatch) => {
     })
 }
 
-export const login = (email, password, rememberMe) => (dispatch) => {
+export const login = (email, password, rememberMe, setSubmitting, setFieldError, setStatus) => (dispatch) => {
     authAPI.login(email, password, rememberMe)
         .then(response => {
             if (response.data.resultCode === 0) {
                 dispatch(getAuthUserData())
+            } else {
+                setStatus(response.data.messages)
             }
         })
 }

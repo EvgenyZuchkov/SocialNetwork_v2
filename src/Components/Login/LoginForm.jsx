@@ -23,15 +23,17 @@ const LoginForm = (props) => {
                     remember: ''
                 }}
                 validateOnBlur
-                onSubmit={(values, {setSubmitting}) => {
-                    props.login(values.email, values.password, values.remember)
+                onSubmit={(values, {setSubmitting, setFieldError, setStatus}) => {
+                    props.login(values.email, values.password, values.remember, setSubmitting, setFieldError, setStatus)
+
+                    setSubmitting(false)
                 }}
                 validationSchema={validationSchema}
             >
                 {({
                       values, errors, touched,
                       handleChange, handleBlur,
-                      isValid, handleSubmit, dirty
+                      isValid, handleSubmit, dirty, status
                   }) => (
                     <form className={s.loginForm}>
                         <p>
@@ -74,6 +76,9 @@ const LoginForm = (props) => {
                             /> Remember me
                         </div>
                         {touched.remember && errors.remember && <p className={s.error}> {errors.remember} </p>}
+                        <div className={s.formSummaryError}>
+                            {status}
+                        </div>
                         <div>
                             <button
                                 type="submit"
