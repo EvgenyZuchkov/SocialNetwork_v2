@@ -6,12 +6,6 @@ import {compose} from "redux";
 import {getUserProfile} from "../../Redux/Profile-reducer";
 
 class HeaderContainer extends React.Component {
-
-    componentDidMount() {
-        this.props.getAuthUserData()
-        this.props.getUserProfile(2)
-    }
-
     render() {
         return <Header {...this.props} profile={this.props.profile}/>
     }
