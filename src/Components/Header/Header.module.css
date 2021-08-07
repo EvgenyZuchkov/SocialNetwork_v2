@@ -1,41 +1,48 @@
 .header {
     grid-area: h;
+    display: grid;
+    grid-template-columns: 100px 150px 800px 150px 200px 100px;
+    grid-template-rows: 50px;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
     background: black;
     opacity: 90%;
     box-shadow: 5px 0 10px black;
 }
-.header b{
+
+.headerLogo { grid-area: 1 / 1 / 2 / 2; }
+.headerName { grid-area: 1 / 2 / 2 / 3; }
+.userAvatar { grid-area: 1 / 4 / 2 / 5; }
+.userData { grid-area: 1 / 5 / 2 / 6; }
+.buttonLogout { grid-area: 1 / 6 / 2 / 7; }
+
+.header .headerLogo img {
+    width: 40px;
+    float: right;
+    margin-top: 3px;
+    margin-right: 3px;
+}
+
+.header .headerName {
     font-family: "Bookman Old Style";
     font-size: 40px;
     margin-left: 20px;
     text-shadow: 7px 0 10px #7081ff;
 }
-.header img {
-    width: 40px;
-    margin-left: 50px;
-}
 
-.infoUser{
-    width: 300px;
+.header .userAvatar img {
+    width: 50px;
     float: right;
-    color: white;
-    /*margin-right: 10px;*/
-    /*margin-top: 3px;*/
+    margin-right: 15px;
 }
 
-.loginBlock {
-    width: 400px;
-    float: right;
+.header .userData {
     color: white;
-    /*margin-right: 10px;*/
-    margin-top: 3px;
+    font-size: 12px;
+    margin-top: 10px;
 }
 
-.loginBlock a {
-    color: white;
-}
-
-.loginBlock img {
-    width: 45px;
-    margin: 0 0 0 30px;
+.header .buttonLogout {
+    text-align: center;
+    margin-top: 15px;
 }
