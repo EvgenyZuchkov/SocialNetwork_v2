@@ -2,22 +2,10 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr) repeat(2, 0);
     grid-template-rows: 1fr 0 1fr repeat(2, 0);
-    grid-column-gap: 0px;
-    grid-row-gap: 0px;
-}
-
-.dialogsAva { grid-area: 1 / 1 / 2 / 2; }
-.dialogsItems { grid-area: 1 / 2 / 2 / 3; }
-.messages { grid-area: 1 / 3 / 2 / 4; }
-.textareaBlock { grid-area: 3 / 1 / 4 / 4; }
-
-.dialogsItems {
-    padding: 10px;
-    line-height: 60px;
-    text-decoration: none;
 }
 
 .dialogsAva {
+    grid-area: 1 / 1 / 2 / 2;
     margin-top: 12px;
 }
 
@@ -28,6 +16,25 @@
     margin-left: 100px;
 }
 
+.dialogsItems {
+    grid-area: 1 / 2 / 2 / 3;
+    padding: 10px;
+    line-height: 60px;
+    text-decoration: none;
+}
+
+.messages {
+    grid-area: 1 / 3 / 2 / 4;
+    margin-top: 0;
+    padding: 10px;
+    line-height: 60px;
+}
+
+.textareaBlock {
+    grid-area: 3 / 1 / 4 / 4;
+
+}
+
 .dialog a {
     font-size: 17px;
     text-decoration: none;
@@ -35,12 +42,6 @@
 
 .dialog .activeLink {
     color: cornflowerblue;
-}
-
-.messages {
-    margin-top: 0;
-    padding: 10px;
-    line-height: 60px;
 }
 
 .dialogs .textareaBlock {
@@ -86,7 +87,6 @@
 
 .messageForm button {
     width: 120px;
-    /*margin: 20px 120px;*/
     margin-top: 20px;
     margin-left: 160px;
     margin-right: auto;

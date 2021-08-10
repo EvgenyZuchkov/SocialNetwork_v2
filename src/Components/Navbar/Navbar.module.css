@@ -5,7 +5,8 @@
     opacity: 90%;
     width: 250px;
     /*background: rgba(244,244,244,0.54);*/
-    background: rgba(122,122,122,0.54);
+    /*background: rgba(122,122,122,0.54);*/
+    background-color: #94b8cc;
     /*box-shadow: 0 0 10px black;*/
 }
 

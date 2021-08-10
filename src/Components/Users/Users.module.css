@@ -1,5 +1,38 @@
-.users {
-    margin-left: 20px;
+.usersBlock {
+    display: grid;
+    grid-template-columns: 200px 800px;
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.pageNumber {
+    margin-top: 10px;
+    margin-bottom: 40px;
+    justify-content: center;
+    text-align: center;
+}
+
+.pageNumber button {
+    border-radius: 5px;
+    background-color: #94b8cc;
+    border: none;
+    margin: 1px;
+    padding: 5px;
+}
+
+.usersAva {
+    grid-area: 1 / 1 / 2 / 2;
+    text-align: center;
+}
+
+.usersButton {
+    grid-area: 2 / 1 / 3 / 2;
+    text-align: center;
+    margin-top: 5px;
+}
+
+.usersData {
+    grid-area: 1 / 2 / 3 / 3;
+    margin-top: 5px;
 }
 
 .userPhoto {

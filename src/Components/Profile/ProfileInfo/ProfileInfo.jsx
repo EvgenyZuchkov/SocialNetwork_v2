@@ -1,6 +1,7 @@
 import s from './ProfileInfo.module.css'
 import Preloader from "../../Common/Preloader/Preloader";
 import ProfileStatus from "./ProfileStatus";
+import userPhoto from "../../../Assets/Images/User-Icon.jpg";
 
 const ProfileInfo = (props) => {
 
@@ -14,8 +15,8 @@ const ProfileInfo = (props) => {
                 {/*<img className={s.wall} src="https://static.schools.by/images/header-bg/img-17.jpg"/>*/}
             </div>
             <div className={s.descriptionBlock}>
-                <div>
-                    <img src={props.profile.photos.large}/>
+                <div className={s.profileAvatar}>
+                    <img src={props.profile.photos.large === null ? userPhoto : null}/>
                 </div>
                 <div>
                     <ProfileStatus status={props.status} updateStatus={props.updateStatus}/>
@@ -34,7 +35,6 @@ const ProfileInfo = (props) => {
                     <strong>LookingForAJobDescription:</strong> {props.profile.contacts.lookingForAJobDescription}<br/>
 
                     <strong>FullName:</strong> {props.profile.contacts.fullName}<br/>
-
                 </div>
             </div>
         </div>
