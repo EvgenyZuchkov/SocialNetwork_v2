@@ -1,6 +1,5 @@
 import s from './ProfileInfo.module.css'
 import Preloader from "../../Common/Preloader/Preloader";
-import ProfileStatus from "./ProfileStatus";
 import userPhoto from "../../../Assets/Images/User-Icon.jpg";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
 
@@ -12,30 +11,32 @@ const ProfileInfo = (props) => {
 
     return (
         <div>
-            <div>
-                {/*<img className={s.wall} src="https://static.schools.by/images/header-bg/img-17.jpg"/>*/}
-            </div>
             <div className={s.descriptionBlock}>
                 <div className={s.profileAvatar}>
                     <img src={props.profile.photos.large === null ? userPhoto : null}/>
                 </div>
                 <div>
-                    <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
-                    <strong>About me:</strong> {props.profile.aboutMe}<br/>
-                    <strong>Contacts:</strong><br/>
-                    <strong>Facebook:</strong> <a href="">{props.profile.contacts.facebook}</a><br/>
-                    <strong>Website:</strong> {props.profile.contacts.website}<br/>
+                    <div className={s.userStatus}>
+                        <b className={s.statusName}>Status:</b>
+                        <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
+                    </div>
+                    <div>
+                        <b>About me:</b> {props.profile.aboutMe}<br/>
+                        <b>Contacts:</b><br/>
+                        <b>Facebook:</b> <a href="">{props.profile.contacts.facebook}</a><br/>
+                        <b>Website:</b> {props.profile.contacts.website}<br/>
 
-                    <strong>Twitter:</strong> {props.profile.contacts.twitter}<br/>
-                    <strong>Instagram:</strong> {props.profile.contacts.instagram}<br/>
-                    <strong>Youtube:</strong> {props.profile.contacts.youtube}<br/>
-                    <strong>Github:</strong> {props.profile.contacts.github}<br/>
-                    <strong>MainLink:</strong> {props.profile.contacts.mainLink}<br/>
+                        <b>Twitter:</b> {props.profile.contacts.twitter}<br/>
+                        <b>Instagram:</b> {props.profile.contacts.instagram}<br/>
+                        <b>Youtube:</b> {props.profile.contacts.youtube}<br/>
+                        <b>Github:</b> {props.profile.contacts.github}<br/>
+                        <b>MainLink:</b> {props.profile.contacts.mainLink}<br/>
 
-                    <strong>LookingForAJob:</strong> {props.profile.contacts.lookingForAJob}<br/>
-                    <strong>LookingForAJobDescription:</strong> {props.profile.contacts.lookingForAJobDescription}<br/>
+                        <b>LookingForAJob:</b> {props.profile.contacts.lookingForAJob}<br/>
+                        <b>LookingForAJobDescription:</b> {props.profile.contacts.lookingForAJobDescription}<br/>
 
-                    <strong>FullName:</strong> {props.profile.contacts.fullName}<br/>
+                        <b>FullName:</b> {props.profile.contacts.fullName}<br/>
+                    </div>
                 </div>
             </div>
         </div>

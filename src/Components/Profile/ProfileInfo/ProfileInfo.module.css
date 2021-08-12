@@ -1,12 +1,20 @@
-.descriptionBlock {
-    padding: 10px;
-}
-
 .wall {
     height: 200px;
     width: 1000px;
 }
 
+.descriptionBlock {
+    padding: 10px;
+}
+
 .descriptionBlock .profileAvatar img {
     height: 300px;
+}
+
+.descriptionBlock .userStatus {
+    display: inline-flex;
+}
+
+.descriptionBlock .statusName {
+    margin-right: 10px;
 }
