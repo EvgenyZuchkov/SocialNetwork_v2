@@ -4,21 +4,6 @@
     grid-template-rows: repeat(2, 1fr);
 }
 
-.pageNumber {
-    margin-top: 10px;
-    margin-bottom: 40px;
-    justify-content: center;
-    text-align: center;
-}
-
-.pageNumber button {
-    border-radius: 5px;
-    background-color: #94b8cc;
-    border: none;
-    margin: 1px;
-    padding: 5px;
-}
-
 .usersAva {
     grid-area: 1 / 1 / 2 / 2;
     text-align: center;
@@ -38,8 +23,4 @@
 .userPhoto {
     width: 100px;
     border-radius: 50px;
-}
-
-.selectedPage {
-    font-weight: bold;
 }
