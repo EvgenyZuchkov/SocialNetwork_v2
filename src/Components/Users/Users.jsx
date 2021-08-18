@@ -7,7 +7,7 @@ let Users = (props) => {
     return (
         <div className={s.users}>
             <Paginator
-                totalUsersCount={props.totalUsersCount}
+                totalItemsCount={props.totalUsersCount}
                 pageSize={props.pageSize}
                 currentPage={props.currentPage}
                 onPageChanged={props.onPageChanged}
@@ -24,6 +24,5 @@ let Users = (props) => {
         </div>
     )
 }
-
 
 export default Users;

@@ -1,6 +1,6 @@
 import './App.css';
 import NavbarContainer from "./Components/Navbar/NavbarContainer";
-import {Route, withRouter} from "react-router-dom"
+import {BrowserRouter, Route, withRouter} from "react-router-dom"
 import Music from "./Components/Music/Music";
 import News from "./Components/News/News";
 import Settings from "./Components/Settings/Settings";
@@ -9,11 +9,12 @@ import UsersContainer from "./Components/Users/UsersContainer";
 import ProfileContainer from "./Components/Profile/ProfileContainer";
 import HeaderContainer from "./Components/Header/HeaderContainer";
 import LoginPage from "./Components/Login/Login";
-import {Component} from "react";
-import {connect} from "react-redux";
+import React, {Component} from "react";
+import {connect, Provider} from "react-redux";
 import {compose} from "redux";
 import Preloader from "./Components/Common/Preloader/Preloader";
 import {initializeApp} from "./Redux/App-reducer";
+import store from "./Redux/Redux-store";
 
 class App extends Component {
 
@@ -50,6 +51,19 @@ const mapStateToProps = (state) => ({
     userId: state.auth.id
 })
 
-export default compose(
+// This is code for successful test complete
+const AppContainer = compose(
     withRouter,
     connect(mapStateToProps, {initializeApp}))(App);
+
+const SamuraiJSApp = (props) => {
+    return <BrowserRouter>
+        {/*<React.StrictMode>*/}
+        <Provider store={store}>
+            <AppContainer/>
+        </Provider>
+        {/*</React.StrictMode>*/}
+    </BrowserRouter>
+}
+
+export default SamuraiJSApp;
