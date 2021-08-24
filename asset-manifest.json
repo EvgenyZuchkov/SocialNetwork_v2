@@ -3,8 +3,8 @@
     "static/js/0.a63a5470.chunk.js": "/SocialNetwork_v2/static/js/0.a63a5470.chunk.js",
     "static/js/0.a63a5470.chunk.js.map": "/SocialNetwork_v2/static/js/0.a63a5470.chunk.js.map",
     "main.css": "/SocialNetwork_v2/static/css/main.df0dca3d.chunk.css",
-    "main.js": "/SocialNetwork_v2/static/js/main.dae44684.chunk.js",
-    "main.js.map": "/SocialNetwork_v2/static/js/main.dae44684.chunk.js.map",
+    "main.js": "/SocialNetwork_v2/static/js/main.bdbac902.chunk.js",
+    "main.js.map": "/SocialNetwork_v2/static/js/main.bdbac902.chunk.js.map",
     "runtime-main.js": "/SocialNetwork_v2/static/js/runtime-main.6b921d18.js",
     "runtime-main.js.map": "/SocialNetwork_v2/static/js/runtime-main.6b921d18.js.map",
     "static/js/3.8ecf512a.chunk.js": "/SocialNetwork_v2/static/js/3.8ecf512a.chunk.js",
@@ -38,6 +38,6 @@
     "static/js/runtime-main.6b921d18.js",
     "static/js/3.8ecf512a.chunk.js",
     "static/css/main.df0dca3d.chunk.css",
-    "static/js/main.dae44684.chunk.js"
+    "static/js/main.bdbac902.chunk.js"
   ]
 }
