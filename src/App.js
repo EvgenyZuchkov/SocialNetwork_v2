@@ -1,6 +1,6 @@
 import './App.css';
 import NavbarContainer from "./Components/Navbar/NavbarContainer";
-import {BrowserRouter, Route, withRouter} from "react-router-dom"
+import {HashRouter, Route, withRouter} from "react-router-dom"
 import Music from "./Components/Music/Music";
 import News from "./Components/News/News";
 import Settings from "./Components/Settings/Settings";
@@ -61,13 +61,11 @@ const AppContainer = compose(
     connect(mapStateToProps, {initializeApp}))(App);
 
 const SamuraiJSApp = (props) => {
-    return <BrowserRouter>
-        {/*<React.StrictMode>*/}
+    return <HashRouter>
         <Provider store={store}>
             <AppContainer/>
         </Provider>
-        {/*</React.StrictMode>*/}
-    </BrowserRouter>
+    </HashRouter>
 }
 
 export default SamuraiJSApp;
