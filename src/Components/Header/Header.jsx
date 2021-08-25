@@ -19,7 +19,7 @@ const Header = (props) => {
                 <b>SN</b>
             </div>
             <div className={s.userAvatar}>
-                {props.isAuth ? <img src={props.profile.photos.small === null ? userPhoto : null}/> : null}
+                {props.isAuth ? <img src={props.profile.photos.small || userPhoto}/> : null}
             </div>
             <div className={s.userData}>
                 <div>
