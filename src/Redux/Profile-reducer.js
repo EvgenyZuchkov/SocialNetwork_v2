@@ -60,8 +60,8 @@ export const savePhotoSuccess = (photos) => ({type: SAVE_PHOTO_SUCCESS, photos})
 
 
 export const getUserProfile = (userId) => async (dispatch) => {
-    const data = await profileAPI.getProfile(userId)
-    dispatch(setUserProfile(data))
+    const response = await profileAPI.getProfile(userId)
+    dispatch(setUserProfile(response))
 }
 
 export const getStatus = (userId) => async (dispatch) => {
@@ -80,6 +80,17 @@ export const savePhoto = (photos) => async (dispatch) => {
     const response = await profileAPI.savePhoto(photos)
     if (response.data.resultCode === 0) {
         dispatch(savePhotoSuccess(response.data.data.photos))
+    }
+}
+
+export const saveProfile = (profile, setSubmitting, setFieldError, setStatus) => async (dispatch, getState) => {
+    const userId = getState().auth.id
+    const response = await profileAPI.saveProfile(profile)
+
+    if (response.data.resultCode === 0) {
+        dispatch(getUserProfile(userId))
+    } else {
+        setStatus(response.data.message)
     }
 }
 

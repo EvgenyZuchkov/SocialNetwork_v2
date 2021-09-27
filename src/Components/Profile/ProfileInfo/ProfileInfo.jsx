@@ -2,8 +2,12 @@ import s from './ProfileInfo.module.css'
 import Preloader from "../../Common/Preloader/Preloader";
 import userPhoto from "../../../Assets/Images/User-Icon.jpg";
 import ProfileStatusWithHooks from "./ProfileStatusWithHooks";
+import React, {useState} from "react";
+import ProfileDataForm from "./ProfileDataForm";
 
 const ProfileInfo = (props) => {
+
+    const [editMode, setEditMode] = useState(false)
 
     if (!props.profile) {
         return <Preloader/>
@@ -29,27 +33,55 @@ const ProfileInfo = (props) => {
                         <b className={s.statusName}>Status:</b>
                         <ProfileStatusWithHooks status={props.status} updateStatus={props.updateStatus}/>
                     </div>
-                    <div>
-                        <b>About me:</b> {props.profile.aboutMe}<br/>
-                        <b>Contacts:</b><br/>
-                        <b>Facebook:</b> <a href="">{props.profile.contacts.facebook}</a><br/>
-                        <b>Website:</b> {props.profile.contacts.website}<br/>
-
-                        <b>Twitter:</b> {props.profile.contacts.twitter}<br/>
-                        <b>Instagram:</b> {props.profile.contacts.instagram}<br/>
-                        <b>Youtube:</b> {props.profile.contacts.youtube}<br/>
-                        <b>Github:</b> {props.profile.contacts.github}<br/>
-                        <b>MainLink:</b> {props.profile.contacts.mainLink}<br/>
-
-                        <b>LookingForAJob:</b> {props.profile.contacts.lookingForAJob}<br/>
-                        <b>LookingForAJobDescription:</b> {props.profile.contacts.lookingForAJobDescription}<br/>
-
-                        <b>FullName:</b> {props.profile.contacts.fullName}<br/>
-                    </div>
+                    {editMode
+                        ? <ProfileDataForm profile={props.profile}
+                                           saveProfile={props.saveProfile}
+                                           setEditMode={setEditMode}
+                        />
+                        : <ProfileData profile={props.profile}
+                                       isOwner={props.isOwner}
+                                       goToEditMode={()=>{setEditMode(true)}}
+                        />}
                 </div>
             </div>
         </div>
     )
+}
+
+const ProfileData = (props) => {
+    return (
+        <div className={s.personalDataBlock}>
+            {props.isOwner && <div><button onClick={props.goToEditMode}>Edit personal data</button></div>}
+            <div>
+
+            </div>
+            <div>
+                <b>Full Name: </b>{props.profile.fullName}
+            </div>
+            <div>
+                <b>LookingForAJob:</b> {props.profile.lookingForAJob ? 'Yes' : 'No'}
+            </div>
+            {props.profile.lookingForAJob &&
+            <div>
+                <b>My professional skills:</b> {props.profile.lookingForAJobDescription}
+            </div>
+            }
+            <div>
+                <b>About me: </b>{props.profile.aboutMe}
+            </div>
+            <div>
+                <b>Contacts: </b>{Object.keys(props.profile.contacts).map(key => {
+                return <Contact key={key} contactTitle={key} contactValue={props.profile.contacts[key]}/>
+            })}
+            </div>
+
+        </div>
+    )
+}
+
+
+const Contact = ({contactTitle, contactValue}) => {
+    return <div className={s.contact}><b>{contactTitle} : {contactValue}</b></div>
 }
 
 export default ProfileInfo;

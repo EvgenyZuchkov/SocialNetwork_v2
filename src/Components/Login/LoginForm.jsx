@@ -82,7 +82,7 @@ const LoginForm = (props) => {
                         <div>
                             <button
                                 type="submit"
-                                disabled={!isValid || !dirty}
+                                // disabled={!isValid || !dirty}
                                 onClick={handleSubmit}
                                 className={s.button}
                             >

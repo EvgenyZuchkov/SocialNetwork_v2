@@ -4,7 +4,7 @@ const SET_USER_DATA = 'social-network/auth/SET_USER_DATA';
 
 
 let initialState = {
-    id: null,
+    userId: null,
     email: null,
     login: null,
     isAuth: false,

@@ -18,3 +18,30 @@
 .descriptionBlock .statusName {
     margin-right: 10px;
 }
+
+.contact {
+    padding-left: 10px;
+}
+
+.personalDataBlock {
+    margin-top: 30px;
+}
+
+.profileDataForm .error {
+    color: red;
+    font-weight: 700;
+    font-size: 12px;
+}
+
+.profileDataForm .textInputError {
+    border-color: red;
+}
+
+.formSummaryError {
+    margin-left: 60px;
+    margin-top: 15px;
+    color: red;
+    font-weight: 700;
+    font-size: 12px;
+
+}
