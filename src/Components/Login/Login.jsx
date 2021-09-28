@@ -14,13 +14,14 @@ const Login = (props) => {
     return (
         <div>
             <h1 className={s.login}>Sign Up</h1>
-            <LoginForm login={props.login}/>
+            <LoginForm login={props.login} captchaUrl={props.captchaUrl}/>
         </div>
     )
 }
 
 const mapStateToProps = (state) => ({
-    isAuth: state.auth.isAuth
+    isAuth: state.auth.isAuth,
+    captchaUrl: state.auth.captchaUrl
 })
 
 

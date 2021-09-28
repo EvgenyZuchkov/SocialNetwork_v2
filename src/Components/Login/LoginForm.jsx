@@ -20,11 +20,12 @@ const LoginForm = (props) => {
                 initialValues={{
                     email: '',
                     password: '',
-                    remember: ''
+                    remember: '',
+                    captcha: ''
                 }}
                 validateOnBlur
                 onSubmit={(values, {setSubmitting, setFieldError, setStatus}) => {
-                    props.login(values.email, values.password, values.remember, setSubmitting, setFieldError, setStatus)
+                    props.login(values.email, values.password, values.remember, values.captcha, setSubmitting, setFieldError, setStatus)
 
                     setSubmitting(false)
                 }}
@@ -76,6 +77,20 @@ const LoginForm = (props) => {
                             /> Remember me
                         </div>
                         {touched.remember && errors.remember && <p className={s.error}> {errors.remember} </p>}
+
+                        <div>
+                            {props.captchaUrl && <img src={props.captchaUrl}/>}
+                            {props.captchaUrl
+                            && <input type='input'
+                                      name='captcha'
+                                      onChange={handleChange}
+                                      onBlur={handleBlur}
+                                      value={values.captcha}
+                                      className={s.captcha}
+                            />}
+                        </div>
+                        {touched.captcha && errors.captcha && <p className={s.error}> {errors.captcha} </p>}
+
                         <div className={s.formSummaryError}>
                             {status}
                         </div>
